@@ -1,11 +1,7 @@
 import React from "react";
 
 const page = () => {
-  return (
-    <div>
-      <h1>Hello from App router</h1>
-    </div>
-  );
+  return <div>my plan</div>;
 };
 
 export default page;
