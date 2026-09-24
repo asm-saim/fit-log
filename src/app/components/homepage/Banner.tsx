@@ -26,7 +26,7 @@ const Banner = () => {
 
             <a
               href="#library"
-              className="mt-7 inline-flex items-center gap-2 rounded-md bg-[#ccff00] px-4 py-3 text-xs font-bold text-black transition-all duration-200 hover:bg-[#b8e600] hover:shadow-[0_0_20px_rgba(204,255,0,0.25)]"
+              className="mt-7 inline-flex items-center gap-2 rounded-md bg-[#C2F800] px-4 py-3 text-xs font-bold text-black transition-all duration-200 hover:bg-[#b8e600] hover:shadow-[0_0_20px_rgba(204,255,0,0.25)]"
             >
               BROWSE WORKOUTS
               <ArrowRight size={14} strokeWidth={2.5} />

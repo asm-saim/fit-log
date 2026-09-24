@@ -67,7 +67,7 @@ const Navbar = () => {
             </Link>
 
             {/* Saved */}
-            <Link href="/saved" className="flex items-center gap-2 text-white/80 hover:text-white">
+            <Link href="/myplan" className="flex items-center gap-2 text-white/80 hover:text-white">
               <span>Saved</span>
 
               <span className="flex size-6 items-center justify-center rounded-full border border-white/30 font-semibold">
@@ -126,7 +126,7 @@ const Navbar = () => {
                 0
               </span>
             </Link>
-            
+
             <Link
               href="/saved"
               onClick={closeMenu}
