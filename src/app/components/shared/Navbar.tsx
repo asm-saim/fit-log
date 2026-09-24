@@ -15,7 +15,6 @@ const Navbar = () => {
   const isWorkoutActive = pathname === "/";
   const isMyPlanActive = pathname === "/my-plan";
 
-
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
@@ -92,7 +91,7 @@ const Navbar = () => {
         <div className="border-t border-white/10 bg-[#0d0f12] px-4 py-4 lg:hidden">
           <nav className="flex flex-col gap-2">
             <Link
-              href="/workout"
+              href="/"
               onClick={closeMenu}
               className={`rounded-lg px-4 py-3 text-sm transition-colors ${
                 isWorkoutActive
@@ -128,13 +127,9 @@ const Navbar = () => {
             </Link>
 
             <Link
-              href="/saved"
+              href="/my-plan"
               onClick={closeMenu}
-              className={`flex items-center justify-between rounded-lg px-4 py-3 text-sm transition-colors ${
-                isSavedActive
-                  ? "bg-[#1A2312] font-semibold text-[#C2F800]"
-                  : "text-white/70 hover:bg-white/5 hover:text-white"
-              }`}
+              className="flex items-center justify-between rounded-lg px-4 py-3 text-sm text-white/70 transition-colors hover:bg-white/5 hover:text-white"
             >
               <span>Saved</span>
 
