@@ -23,7 +23,7 @@ const LiftDetail = ({ lift }: LiftDetailProps) => {
 
         {/* Details */}
         <div className="flex flex-col">
-          <h1 className="text-2xl font-bold uppercase tracking-tight text-white sm:text-3xl">{lift.name}</h1>
+          <h1 className="text-2xl font-bold uppercase tracking-tight text-[#FFFFFF] sm:text-3xl">{lift.name}</h1>
 
           <p className="mt-2 text-sm leading-relaxed text-slate-400">{lift.description}</p>
 

@@ -12,9 +12,9 @@ const Navbar = () => {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const isWorkoutActive = pathname === "/workout";
-  const isMyPlanActive = pathname === "/myplan";
-  const isSavedActive = pathname === "/saved";
+  const isWorkoutActive = pathname === "/";
+  const isMyPlanActive = pathname === "/my-plan";
+
 
   const closeMenu = () => setIsMenuOpen(false);
 
@@ -37,7 +37,7 @@ const Navbar = () => {
         {/* Desktop Navigation */}
         <nav className="hidden items-center gap-2 lg:flex">
           <Link
-            href="/workout"
+            href="/"
             className={`rounded-full px-5 py-[6px] text-sm transition-colors ${
               isWorkoutActive ? "bg-[#1A2312] font-semibold text-[#C2F800]" : "text-[#9CA3AF] hover:text-white"
             }`}
@@ -46,7 +46,7 @@ const Navbar = () => {
           </Link>
 
           <Link
-            href="/myplan"
+            href="/my-plan"
             className={`rounded-full px-5 py-[6px] text-sm transition-colors ${
               isMyPlanActive ? "bg-[#1A2312] font-semibold text-[#C2F800]" : "text-[#9CA3AF] hover:text-white"
             }`}
@@ -58,7 +58,7 @@ const Navbar = () => {
         <div className="hidden flex-1 justify-end lg:flex">
           <div className="flex items-center gap-5 text-sm">
             {/* Plan */}
-            <Link href="/myplan" className="flex items-center gap-2 text-white/80 hover:text-white">
+            <Link href="/my-plan" className="flex items-center gap-2 text-white/80 hover:text-white">
               <span>Plan</span>
 
               <span className="flex size-6 items-center justify-center rounded-full bg-[#C2F800] font-semibold text-black">
@@ -67,7 +67,7 @@ const Navbar = () => {
             </Link>
 
             {/* Saved */}
-            <Link href="/myplan" className="flex items-center gap-2 text-white/80 hover:text-white">
+            <Link href="/my-plan" className="flex items-center gap-2 text-white/80 hover:text-white">
               <span>Saved</span>
 
               <span className="flex size-6 items-center justify-center rounded-full border border-white/30 font-semibold">
@@ -104,7 +104,7 @@ const Navbar = () => {
             </Link>
 
             <Link
-              href="/myplan"
+              href="/my-plan"
               onClick={closeMenu}
               className={`rounded-lg px-4 py-3 text-sm transition-colors ${
                 isMyPlanActive
@@ -116,7 +116,7 @@ const Navbar = () => {
             </Link>
 
             <Link
-              href="/myplan"
+              href="/my-plan"
               onClick={closeMenu}
               className="flex items-center justify-between rounded-lg px-4 py-3 text-sm text-white/70 transition-colors hover:bg-white/5 hover:text-white"
             >
