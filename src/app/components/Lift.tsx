@@ -24,7 +24,7 @@ interface LiftProps {
 
 const Lift = ({ lift }: LiftProps) => {
   return (
-    <Link href={`/workouts/${lift.id}`} className="block">
+    <Link href={`/lift-detail/${lift.id}`} className="block">
       <div className="group overflow-hidden rounded-2xl border border-slate-800 bg-[#15161d] hover:border-lime-300">
         {/* Image */}
         <div className="relative h-48 w-full overflow-hidden">
@@ -41,14 +41,14 @@ const Lift = ({ lift }: LiftProps) => {
           {/* Categories */}
           <div className="mb-4 flex gap-2">
             {lift.muscleGroups.map((muscle) => (
-              <span key={muscle} className="rounded-full bg-lime-400 px-3 py-1 text-xs font-bold uppercase text-black">
+              <span key={muscle} className="rounded-full bg-[#C2F800] px-3 py-1 text-xs font-bold uppercase text-black">
                 {muscle}
               </span>
             ))}
           </div>
 
           {/* Name */}
-          <h3 className="text-lg font-extrabold uppercase text-white">{lift.name}</h3>
+          <h3 className="text-lg font-extrabold uppercase text-[#FFFFFF]">{lift.name}</h3>
 
           {/* Equipment */}
           <p className="mt-1 text-sm text-slate-400">{lift.equipment}</p>

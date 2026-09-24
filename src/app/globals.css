@@ -4,3 +4,7 @@
 @theme {
   --font-oswald: var(--font-oswald);
 }
+
+/* html {
+  scroll-behavior: smooth;
+} */

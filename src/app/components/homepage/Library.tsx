@@ -20,7 +20,7 @@ const Library = async () => {
   const libraryData = await getLibrary();
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-6 lg:py-12">
+    <section id="library" className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-6 lg:py-12">
       <div className="space-y-2">
         <h1 className="font-oswald text-2xl font-bold text-[#FFFFFF] sm:text-3xl">THE LIBRARY</h1>
 
@@ -32,7 +32,7 @@ const Library = async () => {
           <Lift key={lift.id} lift={lift} />
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 
