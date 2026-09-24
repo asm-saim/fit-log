@@ -25,7 +25,7 @@ interface LiftProps {
 const Lift = ({ lift }: LiftProps) => {
   return (
     <Link href={`/workouts/${lift.id}`} className="block">
-      <div className="group overflow-hidden rounded-2xl border border-slate-800 bg-[#15161d]">
+      <div className="group overflow-hidden rounded-2xl border border-slate-800 bg-[#15161d] hover:border-lime-300">
         {/* Image */}
         <div className="relative h-48 w-full overflow-hidden">
           <Image
