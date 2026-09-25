@@ -138,7 +138,7 @@ const MyPlan = () => {
 
 const EmptyState = () => {
   return (
-    <div className="flex min-h-[140px] items-center justify-center rounded-lg border border-dashed border-slate-600 px-4 mt-10 md:mt-1 py-8 md:py-14 text-center">
+    <div className="flex min-h-[140px] items-center justify-center rounded-lg border border-dashed border-slate-700 px-4 mt-10 md:mt-1 py-8 md:py-14 text-center">
       <div>
         <h2 className=" font-bold font-oswald text-white text-xs md:text-[25px]">NOTHING HERE YET</h2>
 

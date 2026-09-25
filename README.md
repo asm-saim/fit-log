@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# <img src="./src/assets/logo.png" width="25" height="25" alt="FitLog Logo" /> FitLog — Workout Library
 
-## Getting Started
+> A dark, no-nonsense gym companion. Pick a lift, lock it into today's plan, and watch the week's work add up.
 
-First, run the development server:
+FitLog is a responsive workout-tracking web app where users can browse a library of exercises, explore detailed workout information, and build a daily training plan — all backed by live counters, toast notifications, and a clean, distraction-free dark UI.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Live Demo
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+🔗 **[View Live Site](YOUR_VERCEL_LIVE_LINK)**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Technologies Used
 
-To learn more about Next.js, take a look at the following resources:
+| Category               | Technology         |
+| ---------------------- | ------------------ |
+| **Language**           | TypeScript         |
+| **Framework**          | Next.js            |
+| **UI Library**         | React              |
+| **Styling**            | Tailwind CSS       |
+| **State Management**   | React Context API  |
+| **Routing**            | Next.js App Router |
+| **Notifications**      | React Toastify     |
+| **Icons**              | Lucide React       |
+| **Data**               | REST API           |
+| **Image Optimization** | Next.js Image      |
+| **Fonts**              | Google Fonts       |
+| **Deployment**         | Vercel             |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Key Features
 
-## Deploy on Vercel
+* **Detailed Workout Pages** — Each workout has a dedicated two-column detail page with workout information, key specifications, instructions, and actions to add the workout to today's plan or save it for later.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* **Live Plan Tracking** — The `/my-plan` page displays live totals for exercises, minutes, and calories. Statistics update automatically when workouts are added or removed.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+* **Workout Management & Feedback** — Users can add workouts to today's plan, save workouts for later, mark workouts as done, and remove workouts. Navbar counters and toast notifications provide immediate feedback.
+
+* **Sorting & Responsive Design** — Workouts on the My Plan page can be sorted by duration, calories, or rating. The entire application is responsive across mobile, tablet, and desktop devices.
+
+* **Dynamic Workout Library** — Twelve lifts are fetched from an API and displayed in a responsive 3×4 grid on large screens. Each card includes category tags, equipment, duration, calories, and rating.
+
+---
+
+## ✨ Additional Features
+
+* Dark modern fitness-focused interface
+* Active navigation state
+* Plan and Saved counters in the navbar
+* Smooth scroll from the hero section to the workout library
+* Loading state while workout data is being fetched
+* Custom 404 page for invalid routes
+* Empty state for empty workout lists
+* Five-lift daily plan limit
+* Reusable React components
+* Context API for shared workout state
+* Toast notifications for workout actions
+* Responsive footer
+* Optimized images with Next.js `Image`
+* Deep-link and page reload support after deployment
+
+---
+
+© 2026 FitLog — Workout Library. Train hard, log honest.
