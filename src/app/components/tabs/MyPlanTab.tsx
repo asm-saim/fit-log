@@ -6,6 +6,7 @@ import { Check, Clock, Flame, Star, X } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { useContext } from "react";
+import { toast } from "react-toastify";
 
 interface IMyPlanTabProps {
   plan: ILift;
@@ -16,6 +17,14 @@ const MyPlanTab = ({ plan }: IMyPlanTabProps) => {
 
   const handleRemove = () => {
     setTodaysPlan((currentPlan) => currentPlan.filter((item) => item.id !== plan.id));
+    
+    //remove
+    toast.success(`${plan.name} removed from your plan.`);
+  };
+
+  const handleMark = () => {
+    //mark as done
+    toast.success(`${plan.name} marked as done!`);
   };
 
   return (
@@ -60,6 +69,7 @@ const MyPlanTab = ({ plan }: IMyPlanTabProps) => {
         </Link>
 
         <button
+          onClick={() => handleMark()}
           type="button"
           className="flex items-center gap-1 rounded-md bg-lime-400 px-3 py-2 text-xs font-semibold text-black hover:bg-lime-300"
         >

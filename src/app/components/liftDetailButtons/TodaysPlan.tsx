@@ -4,6 +4,7 @@ import { MyPlanContext } from "@/context/MyPlanContext";
 import { ILift } from "@/types";
 import { Plus } from "lucide-react";
 import { useContext } from "react";
+import { toast } from "react-toastify";
 
 interface ITodaysProps {
   lift: ILift;
@@ -24,6 +25,9 @@ const TodaysPlan = ({ lift }: ITodaysProps) => {
     if (todaysPlan.length >= 5) {
       return;
     }
+
+    //react toast:
+    toast.success(`${lift.name} added to today's plan.`);
 
     setTodaysPlan((currentPlan) => [...currentPlan, lift]);
   };

@@ -5,6 +5,7 @@ import Navbar from "./components/shared/Navbar";
 import { Oswald } from "next/font/google";
 import Footer from "./components/shared/Footer";
 import MyPlanProvider from "@/context/MyPlanContext";
+import { ToastContainer } from "react-toastify";
 
 const oswald = Oswald({
   subsets: ["latin"],
@@ -35,6 +36,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <main className="flex-1">{children}</main>
           <Footer></Footer>
         </MyPlanProvider>
+
+        <ToastContainer position="top-right" autoClose={2000} theme="dark" />
       </body>
     </html>
   );

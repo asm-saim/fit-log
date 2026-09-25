@@ -6,6 +6,7 @@ import { useContext, useState } from "react";
 import MyPlanTab from "../components/tabs/MyPlanTab";
 import SavedTab from "../components/tabs/SavedTab";
 import Link from "next/link";
+import { ChevronDown } from "lucide-react";
 
 const MyPlan = () => {
   const { todaysPlan, saved } = useContext(MyPlanContext);
@@ -100,17 +101,24 @@ const MyPlan = () => {
 
         {/* Sort By */}
         <div className="flex items-center gap-2">
-          <span className="text-[10px] md:text-xs text-slate-500">Sort By</span>
+          <span className="text-[10px] text-slate-500 md:text-xs">Sort By</span>
 
-          <select
-            value={sortBy}
-            onChange={(e) => setSortBy(e.target.value as "duration" | "calories" | "rating")}
-            className="cursor-pointer rounded-md border border-slate-800 bg-[#12151b] px-2 py-1.5 text-[10px] md:text-xs text-slate-300 outline-none"
-          >
-            <option value="duration">Duration</option>
-            <option value="calories">Calories</option>
-            <option value="rating">Rating</option>
-          </select>
+          <div className="relative">
+            <select
+              value={sortBy}
+              onChange={(e) => setSortBy(e.target.value as "duration" | "calories" | "rating")}
+              className="cursor-pointer appearance-none rounded-md border border-slate-800 bg-[#12151b] py-1.5 pl-2 pr-7 text-[10px] text-slate-300 outline-none md:text-xs"
+            >
+              <option value="duration">Duration</option>
+              <option value="calories">Calories</option>
+              <option value="rating">Rating</option>
+            </select>
+
+            <ChevronDown
+              size={14}
+              className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 text-slate-400"
+            />
+          </div>
         </div>
       </div>
 
@@ -130,7 +138,7 @@ const MyPlan = () => {
 
 const EmptyState = () => {
   return (
-    <div className="flex min-h-[140px] items-center justify-center rounded-lg border border-dashed border-slate-600 px-4 py-8 md:py-14 text-center">
+    <div className="flex min-h-[140px] items-center justify-center rounded-lg border border-dashed border-slate-600 px-4 mt-10 md:mt-1 py-8 md:py-14 text-center">
       <div>
         <h2 className=" font-bold font-oswald text-white text-xs md:text-[25px]">NOTHING HERE YET</h2>
 

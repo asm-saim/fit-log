@@ -4,6 +4,7 @@ import { MyPlanContext } from "@/context/MyPlanContext";
 import { ILift } from "@/types";
 import { Bookmark } from "lucide-react";
 import { useContext } from "react";
+import { toast } from "react-toastify";
 
 interface ISavedProps {
   lift: ILift;
@@ -20,9 +21,10 @@ const Saved = ({ lift }: ISavedProps) => {
       if (alreadySaved) {
         return currentSaved;
       }
-
       return [...currentSaved, lift];
     });
+    //react toast:
+    toast.success(`${lift.name} saved for later.`);
   };
 
   const alreadySaved = saved.some((item) => item.id === lift.id);
