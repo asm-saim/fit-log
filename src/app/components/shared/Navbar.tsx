@@ -4,13 +4,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useContext, useState } from "react";
 
 import dumble from "@/assets/logo.png";
+import { MyPlanContext } from "@/context/MyPlanContext";
 
 const Navbar = () => {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const { todaysPlan, saved } = useContext(MyPlanContext);
 
   const isWorkoutActive = pathname === "/";
   const isMyPlanActive = pathname === "/my-plan";
@@ -19,20 +22,19 @@ const Navbar = () => {
 
   return (
     <div className="sticky top-0 z-50 border-b border-white/10 bg-[#0d0f12]/90 backdrop-blur-xl">
-      {" "}
       <div className="mx-auto flex h-[70px] max-w-7xl items-center px-4 lg:px-6">
-        {/* Logo */}{" "}
+        {/* Logo */}
         <div className="flex-1">
-          {" "}
           <Link
             href="/"
             className="flex w-fit items-center gap-2 text-xl font-semibold font-oswald"
             onClick={closeMenu}
           >
-            {" "}
-            <Image src={dumble} alt="FitLog logo" width={28} height={28} /> <span className="text-xl">FITLOG</span>{" "}
-          </Link>{" "}
+            <Image src={dumble} alt="FitLog logo" width={28} height={28} />
+            <span className="text-xl">FITLOG</span>
+          </Link>
         </div>
+
         {/* Desktop Navigation */}
         <nav className="hidden items-center gap-2 lg:flex">
           <Link
@@ -53,6 +55,7 @@ const Navbar = () => {
             My Plan
           </Link>
         </nav>
+
         {/* Desktop Right Side */}
         <div className="hidden flex-1 justify-end lg:flex">
           <div className="flex items-center gap-5 text-sm">
@@ -61,7 +64,7 @@ const Navbar = () => {
               <span>Plan</span>
 
               <span className="flex size-6 items-center justify-center rounded-full bg-[#C2F800] font-semibold text-black">
-                0
+                {todaysPlan.length}
               </span>
             </Link>
 
@@ -70,11 +73,12 @@ const Navbar = () => {
               <span>Saved</span>
 
               <span className="flex size-6 items-center justify-center rounded-full border border-white/30 font-semibold">
-                0
+                {saved.length}
               </span>
             </Link>
           </div>
         </div>
+
         {/* Mobile Hamburger */}
         <button
           type="button"
@@ -86,6 +90,7 @@ const Navbar = () => {
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
+
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="border-t border-white/10 bg-[#0d0f12] px-4 py-4 lg:hidden">
@@ -114,6 +119,7 @@ const Navbar = () => {
               My Plan
             </Link>
 
+            {/* Mobile Plan */}
             <Link
               href="/my-plan"
               onClick={closeMenu}
@@ -122,10 +128,11 @@ const Navbar = () => {
               <span>Plan</span>
 
               <span className="flex size-6 items-center justify-center rounded-full bg-[#C2F800] font-semibold text-black">
-                0
+                {todaysPlan.length}
               </span>
             </Link>
 
+            {/* Mobile Saved */}
             <Link
               href="/my-plan"
               onClick={closeMenu}
@@ -134,7 +141,7 @@ const Navbar = () => {
               <span>Saved</span>
 
               <span className="flex size-6 items-center justify-center rounded-full border border-white/30 font-semibold">
-                0
+                {saved.length}
               </span>
             </Link>
           </nav>

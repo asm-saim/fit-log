@@ -1,4 +1,5 @@
-'use client'
+"use client";
+
 import { MyPlanContext } from "@/context/MyPlanContext";
 import { ILift } from "@/types";
 import { Bookmark } from "lucide-react";
@@ -9,21 +10,37 @@ interface ISavedProps {
 }
 
 const Saved = ({ lift }: ISavedProps) => {
-  //getting the context data:
   const { saved, setSaved } = useContext(MyPlanContext);
 
   const handleSaved = () => {
-    // console.log("readList is clicked", book);
-    setSaved([...saved, lift]);
+    setSaved((currentSaved) => {
+      // Don't save the same lift twice
+      const alreadySaved = currentSaved.some((item) => item.id === lift.id);
+
+      if (alreadySaved) {
+        return currentSaved;
+      }
+
+      return [...currentSaved, lift];
+    });
   };
+
+  const alreadySaved = saved.some((item) => item.id === lift.id);
+
   return (
     <div>
       <button
-        onClick={() => handleSaved()}
-        className="flex items-center gap-2 rounded-md border border-slate-700 px-3 py-2 text-xs text-slate-300 transition hover:bg-slate-800 cursor-pointer"
+        type="button"
+        onClick={handleSaved}
+        disabled={alreadySaved}
+        className={`flex items-center gap-2 rounded-md border px-3 py-2 text-xs transition ${
+          alreadySaved
+            ? "cursor-not-allowed border-slate-800 bg-slate-800 text-slate-500"
+            : "cursor-pointer border-slate-700 text-slate-300 hover:bg-slate-800"
+        }`}
       >
         <Bookmark size={14} />
-        Save for later
+        {alreadySaved ? "Saved" : "Save for later"}
       </button>
     </div>
   );
