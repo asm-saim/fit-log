@@ -35,7 +35,7 @@ FitLog is a responsive workout-tracking web app where users can browse a library
 
 * **Detailed Workout Pages** — Each workout has a dedicated two-column detail page with workout information, key specifications, instructions, and actions to add the workout to today's plan or save it for later.
 
-* **Live Plan Tracking** — The `/my-plan` page displays live totals for exercises, minutes, and calories. Statistics update automatically when workouts are added or removed.
+* **Live Plan Tracking** — The My Plan page displays live totals for exercises, minutes, and calories. Statistics update automatically when workouts are added or removed.
 
 * **Workout Management & Feedback** — Users can add workouts to today's plan, save workouts for later, mark workouts as done, and remove workouts. Navbar counters and toast notifications provide immediate feedback.
 

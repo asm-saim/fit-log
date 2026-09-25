@@ -1,13 +1,15 @@
+import { ILift } from "@/types";
 import Lift from "../Lift";
 
-const getLibrary = async () => {
+const getLibrary = async (): Promise<ILift[]> => {
   try {
     const res = await fetch("https://api.abcz.workers.dev/api/fitlog");
-    const data = await res.json();
 
     if (!res.ok) {
       throw new Error("Failed to fetch Library");
     }
+
+    const data: ILift[] = await res.json();
 
     return data;
   } catch (error) {
