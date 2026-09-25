@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { Bookmark, Plus } from "lucide-react";
 import { ILift } from "@/types";
+import TodaysPlan from "./liftDetailButtons/TodaysPlan";
+import Saved from "./liftDetailButtons/Saved";
 
 interface LiftDetailProps {
   lift: ILift;
@@ -8,10 +10,10 @@ interface LiftDetailProps {
 
 const LiftDetail = ({ lift }: LiftDetailProps) => {
   return (
-    <div className="mx-auto max-w-6xl px-4 py-8">
+    <div className="mx-auto max-w-7xl px-6 py-8">
       <div className="grid grid-cols-1 gap-6 rounded-xl border border-slate-800 bg-[#0f1117] p-4 sm:p-6 lg:grid-cols-2">
         {/* Image */}
-        <div className="relative h-[320px] overflow-hidden rounded-lg sm:h-[400px] lg:h-[480px]">
+        <div className="relative h-[320px] overflow-hidden rounded-lg sm:h-[400px] lg:h-[625px]">
           <Image
             src={lift.image}
             alt={lift.name}
@@ -105,15 +107,8 @@ const LiftDetail = ({ lift }: LiftDetailProps) => {
 
           {/* Buttons */}
           <div className="mt-5 flex flex-wrap gap-2">
-            <button className="flex items-center gap-2 rounded-md bg-lime-400 px-3 py-2 text-xs font-semibold text-black transition hover:bg-lime-300">
-              <Plus size={14} />
-              Add to today&apos;s plan
-            </button>
-
-            <button className="flex items-center gap-2 rounded-md border border-slate-700 px-3 py-2 text-xs text-slate-300 transition hover:bg-slate-800">
-              <Bookmark size={14} />
-              Save for later
-            </button>
+            <TodaysPlan lift={lift}></TodaysPlan>
+            <Saved lift={lift}></Saved>
           </div>
         </div>
       </div>
