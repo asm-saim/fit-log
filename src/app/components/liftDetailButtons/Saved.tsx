@@ -14,16 +14,15 @@ const Saved = ({ lift }: ISavedProps) => {
   const { saved, setSaved } = useContext(MyPlanContext);
 
   const handleSaved = () => {
-    setSaved((currentSaved) => {
-      // Don't save the same lift twice
-      const alreadySaved = currentSaved.some((item) => item.id === lift.id);
+    const alreadySaved = saved.some((item) => item.id === lift.id);
 
-      if (alreadySaved) {
-        return currentSaved;
-      }
-      return [...currentSaved, lift];
-    });
-    //react toast:
+    if (alreadySaved) {
+      toast.warning(`${lift.name} is already saved.`);
+      return;
+    }
+
+    setSaved((currentSaved) => [...currentSaved, lift]);
+
     toast.success(`${lift.name} saved for later.`);
   };
 
@@ -34,10 +33,9 @@ const Saved = ({ lift }: ISavedProps) => {
       <button
         type="button"
         onClick={handleSaved}
-        disabled={alreadySaved}
         className={`flex items-center gap-2 rounded-md border px-3 py-2 text-xs transition ${
           alreadySaved
-            ? "cursor-not-allowed border-slate-800 bg-slate-800 text-slate-500"
+            ? "cursor-pointer border-slate-800 bg-slate-800 text-slate-500"
             : "cursor-pointer border-slate-700 text-slate-300 hover:bg-slate-800"
         }`}
       >

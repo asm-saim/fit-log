@@ -14,22 +14,21 @@ const TodaysPlan = ({ lift }: ITodaysProps) => {
   const { todaysPlan, setTodaysPlan } = useContext(MyPlanContext);
 
   const handleTodaysPlan = () => {
-    // Prevent duplicate lifts
     const alreadyAdded = todaysPlan.some((item) => item.id === lift.id);
 
     if (alreadyAdded) {
+      toast.warning(`${lift.name} is already in today's plan.`);
       return;
     }
 
-    // Maximum 5 lifts
     if (todaysPlan.length >= 5) {
+      toast.warning("Your plan is already full. You can add up to 5 lifts.");
       return;
     }
-
-    //react toast:
-    toast.success(`${lift.name} added to today's plan.`);
 
     setTodaysPlan((currentPlan) => [...currentPlan, lift]);
+
+    toast.success(`${lift.name} added to today's plan.`);
   };
 
   const alreadyAdded = todaysPlan.some((item) => item.id === lift.id);
@@ -40,10 +39,10 @@ const TodaysPlan = ({ lift }: ITodaysProps) => {
       <button
         type="button"
         onClick={handleTodaysPlan}
-        disabled={alreadyAdded || isFull}
+        disabled={isFull}
         className={`flex items-center gap-2 rounded-md px-3 py-2 text-xs font-semibold transition ${
           alreadyAdded || isFull
-            ? "cursor-not-allowed bg-gray-700 text-gray-400"
+            ? "cursor-pointer bg-gray-700 text-gray-400"
             : "cursor-pointer bg-lime-400 text-black hover:bg-lime-300"
         }`}
       >

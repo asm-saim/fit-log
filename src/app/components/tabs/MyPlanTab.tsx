@@ -5,7 +5,7 @@ import { ILift } from "@/types";
 import { Check, Clock, Flame, Star, X } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { toast } from "react-toastify";
 
 interface IMyPlanTabProps {
@@ -17,12 +17,16 @@ const MyPlanTab = ({ plan }: IMyPlanTabProps) => {
 
   const handleRemove = () => {
     setTodaysPlan((currentPlan) => currentPlan.filter((item) => item.id !== plan.id));
-    
+
     //remove
     toast.success(`${plan.name} removed from your plan.`);
   };
 
+  //Declaring state:
+  const [isDone, setIsDone] = useState(false);
+
   const handleMark = () => {
+    setIsDone(true);
     //mark as done
     toast.success(`${plan.name} marked as done!`);
   };
@@ -69,12 +73,14 @@ const MyPlanTab = ({ plan }: IMyPlanTabProps) => {
         </Link>
 
         <button
-          onClick={() => handleMark()}
+          onClick={handleMark}
           type="button"
-          className="flex items-center gap-1 rounded-md bg-lime-400 px-3 py-2 text-xs font-semibold text-black hover:bg-lime-300"
+          className={`flex items-center gap-1 rounded-md px-3 py-2 text-xs font-semibold ${
+            isDone ? "bg-slate-700 text-lime-400" : "bg-lime-400 text-black hover:bg-lime-300"
+          }`}
         >
           <Check size={14} />
-          Mark as Done
+          {isDone ? "Workout Done" : "Mark as Done"}
         </button>
 
         <button
