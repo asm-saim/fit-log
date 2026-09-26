@@ -47,7 +47,7 @@ const MyPlan = () => {
       </header>
 
       {/* Stats */}
-      <div className="mb-4 grid grid-cols-3 overflow-hidden rounded-xl border border-slate-600 bg-[#232732]">
+      <div className="mb-4 grid grid-cols-3 overflow-hidden rounded-xl border border-[#232732] bg-[#13161D]">
         {/* Exercises */}
         <div className="relative px-4 py-4 md:px-6 md:py-8">
           <span className="absolute right-0 top-4 bottom-4 w-px bg-slate-600 md:top-8 md:bottom-8" />

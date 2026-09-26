@@ -8,7 +8,7 @@ FitLog is a responsive workout-tracking web app where users can browse a library
 
 ## Live Demo
 
-🔗 **[View Live Site](YOUR_VERCEL_LIVE_LINK)**
+🔗 **[View Live Site](https://fit-log-v1.vercel.app/)**
 
 ---
 

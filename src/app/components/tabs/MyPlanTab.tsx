@@ -28,7 +28,7 @@ const MyPlanTab = ({ plan }: IMyPlanTabProps) => {
   };
 
   return (
-    <div className="mb-4 flex flex-col gap-4 rounded-xl border border-slate-800 bg-slate-900 p-4 md:flex-row md:items-center">
+    <div className="mb-4 flex flex-col gap-4 rounded-xl border border-[#232732] bg-[#14171E] p-4 md:flex-row md:items-center">
       {/* Image */}
       <div className="relative h-32 w-full shrink-0 overflow-hidden rounded-lg md:h-24 md:w-36">
         <Image src={plan.image} alt={plan.name} fill className="object-cover" sizes="(max-width: 768px) 100vw, 144px" />
@@ -36,24 +36,24 @@ const MyPlanTab = ({ plan }: IMyPlanTabProps) => {
 
       {/* Information */}
       <div className="flex-1">
-        <h2 className="text-lg font-bold uppercase text-white">{plan.name}</h2>
+        <h2 className="text-lg font-oswald font-bold uppercase text-white">{plan.name}</h2>
 
         <p className="mt-1 text-sm text-gray-400">{plan.equipment}</p>
 
         {/* Stats */}
         <div className="mt-3 flex flex-wrap items-center gap-4 text-xs text-gray-400">
           <span className="flex items-center gap-1">
-            <Clock size={14} />
+            <Clock size={16} className="text-lime-400" />
             {plan.duration} min
           </span>
 
           <span className="flex items-center gap-1">
-            <Flame size={14} />
+            <Flame size={16} className="text-lime-400" />
             {plan.caloriesBurned} kcal
           </span>
 
           <span className="flex items-center gap-1">
-            <Star size={14} />
+            <Star size={16} className="text-lime-400" />
             {plan.rating}
           </span>
         </div>
@@ -80,7 +80,7 @@ const MyPlanTab = ({ plan }: IMyPlanTabProps) => {
         <button
           type="button"
           onClick={handleRemove}
-          className="flex cursor-pointer items-center justify-center rounded-md border border-red-500/40 px-3 py-2 text-red-400 hover:bg-red-500/10"
+          className="flex cursor-pointer items-center justify-center rounded-md border border-slate-500/40 px-3 py-2 text-slate-400 hover:bg-red-500/10"
           aria-label={`Remove ${plan.name}`}
         >
           <X size={16} />
