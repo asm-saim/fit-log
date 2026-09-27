@@ -1,4 +1,4 @@
-# <img src="./src/assets/logo.png" width="25" height="25" alt="FitLog Logo" /> FitLog — Workout Library
+# <img src="./src/assets/logo.png" width="25" height="25" alt="FitLog Logo" /> Fit Log 
 
 > A dark, no-nonsense gym companion. Pick a lift, lock it into today's plan, and watch the week's work add up.
 

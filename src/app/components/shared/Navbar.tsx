@@ -31,7 +31,7 @@ const Navbar = () => {
             onClick={closeMenu}
           >
             <Image src={dumble} alt="FitLog logo" width={28} height={28} />
-            <span className="text-xl">FITLOG</span>
+            <span className="text-xl text-[#FFFFFF]">FITLOG</span>
           </Link>
         </div>
 
